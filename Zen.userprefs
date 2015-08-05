@@ -1,9 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/NGUI/Examples/Scripts/InventorySystem/System/InvEquipment.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UIManger.cs">
     <Files>
       <File FileName="Assets/NGUI/Examples/Scripts/InventorySystem/Game/UICursor.cs" Line="78" Column="27" />
       <File FileName="Assets/NGUI/Examples/Scripts/InventorySystem/System/InvEquipment.cs" Line="59" Column="8" />
+      <File FileName="Assets/Scripts/UIManger.cs" Line="7" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
