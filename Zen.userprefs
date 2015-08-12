@@ -1,18 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/RoleFactory.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameController.cs">
     <Files>
-      <File FileName="Assets/Scripts/RoleFactory.cs" Line="21" Column="1" />
-      <File FileName="Assets/Scripts/Role.cs" Line="14" Column="16" />
-      <File FileName="Assets/Scripts/UIManger.cs" Line="8" Column="35" />
-      <File FileName="Assets/Scripts/GameController.cs" Line="44" Column="1" />
+      <File FileName="Assets/Scripts/OldBonzeAnimatorMgr.cs" Line="56" Column="2" />
+      <File FileName="Assets/Scripts/UI_Game.cs" Line="30" Column="45" />
+      <File FileName="Assets/Scripts/GameController.cs" Line="72" Column="3" />
+      <File FileName="Assets/Scripts/RoleFactory.cs" Line="22" Column="51" />
+      <File FileName="Assets/Plugins/Pixelplacement/iTween/Sample/MoveSample.cs" Line="7" Column="95" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/qianwenjun/Documents/learn/project/unity/Zen/Assets/Scripts/GameController.cs" line="44" />
-      <Breakpoint file="/Users/qianwenjun/Documents/learn/project/unity/Zen/Assets/Scripts/RoleFactory.cs" line="8" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

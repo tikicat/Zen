@@ -19,9 +19,11 @@ public class RoleFactory  {
 
 		Object obj = Resources.Load("Prefab/otherRole");
 		GameObject otherRole = MonoBehaviour.Instantiate(obj) as GameObject;
+		GameController.Intance._roleObjs.Add(otherRole);
+
+
 		SpriteRenderer renderer = otherRole.GetComponent<SpriteRenderer>();
 		renderer.sprite = GameController.Intance._otherRoleTextureNormal[(int)(role.RoleType)];
-
 		otherRole.transform.position = new Vector3(-1 + (GameController.Intance._roles.Count - 1) * 1.8f, -2, -3);
 	}
 }

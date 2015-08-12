@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour {
 	public List<Role> _roles;
 	private string[] _strsRandom;
 	private List<int> _intRandom;
+	public  List<GameObject> _roleObjs;
 	
 	public static GameController Intance
 	{
@@ -77,4 +78,19 @@ public class GameController : MonoBehaviour {
 			RoleFactory.CreateRoleWithIndex(num);
 		}
 	}
+
+	public void CheckCurrentRole()
+	{
+		if(_roles[0].RoleType != Role.ROLE_TYPE.roleType_bone)
+		{
+
+		}else 
+		{
+			foreach(var roleObj in _roleObjs)
+			{
+				iTween.MoveBy(roleObj, iTween.Hash("x", -1.8f,  "time", 0.1f));
+			}
+		}
+	}
+
 }
