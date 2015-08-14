@@ -43,7 +43,7 @@ public class GameController : MonoBehaviour {
 		_roles = new List<Role>();
 		_intRandom = new List<int>();
 		Init();
-		_intRandom = GetRandom();
+//		_intRandom = GetRandom();
 		Spawn();
 	}
 
@@ -73,24 +73,42 @@ public class GameController : MonoBehaviour {
 
 	public void Spawn()
 	{
+		_intRandom = GetRandom();
 		foreach(var num in _intRandom)
 		{
 			RoleFactory.CreateRoleWithIndex(num);
 		}
 	}
 
-	public void CheckCurrentRole()
+	public bool IsBonze()
 	{
 		if(_roles[0].RoleType != Role.ROLE_TYPE.roleType_bone)
 		{
-
+			return false;
 		}else 
 		{
+			return true;
+		}
+	}
+	public void MoveAllRoles()
+	{
+			// first will delete
+			GameObject roleWillDelete = _roleObjs[0];
+			iTween.MoveBy(roleWillDelete, iTween.Hash("x", -3.8f,  "time", 0.5f));
+			// remove from roles
+			_roleObjs.RemoveAt(0);
+			_roles.RemoveAt(0);
+			// delete self delay 1s
+			DeleteSelf ds =roleWillDelete.GetComponent<DeleteSelf>();
+			ds.StartDeleteMe();
 			foreach(var roleObj in _roleObjs)
 			{
 				iTween.MoveBy(roleObj, iTween.Hash("x", -1.8f,  "time", 0.1f));
 			}
-		}
+			if(_roleObjs.Count <= 5)
+			{
+				Spawn();
+			}
 	}
 
 }

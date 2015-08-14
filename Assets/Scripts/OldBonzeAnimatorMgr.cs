@@ -77,6 +77,7 @@ public class OldBonzeAnimatorMgr : MonoBehaviour {
 		}
 	}
 
+	// 状态切换
 	public void SetHit()
 	{
 		_animaionState = Hit;
@@ -85,5 +86,16 @@ public class OldBonzeAnimatorMgr : MonoBehaviour {
 	public void SetWalk()
 	{
 		_animaionState = Walk;
+	}
+
+	public void SetScare()
+	{
+		StartCoroutine("CoroutineScare");
+	}
+
+	IEnumerator CoroutineScare()
+	{
+		yield return new WaitForSeconds(1f);
+		_animaionState = Scare;
 	}
 }
