@@ -186,6 +186,7 @@
      <Compile Include="Assets\Scripts\DeleteSelf.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\GameData.cs" />
+     <Compile Include="Assets\Scripts\GameManger.cs" />
      <Compile Include="Assets\Scripts\OldBonze.cs" />
      <Compile Include="Assets\Scripts\OldBonzeAnimatorMgr.cs" />
      <Compile Include="Assets\Scripts\Role.cs" />

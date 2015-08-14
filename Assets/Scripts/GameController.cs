@@ -43,7 +43,6 @@ public class GameController : MonoBehaviour {
 		_roles = new List<Role>();
 		_intRandom = new List<int>();
 		Init();
-//		_intRandom = GetRandom();
 		Spawn();
 	}
 
@@ -111,4 +110,35 @@ public class GameController : MonoBehaviour {
 			}
 	}
 
+	public void ChangeRoleSprite()
+	{
+		SpriteRenderer renderer = _roleObjs[0].GetComponent<SpriteRenderer>();
+		renderer.sprite = GameController.Intance._otherRoleTextureHited[(int)(_roles[0].RoleType)];
+	}
+
+
+	public void OldBonzeDo(bool isHit)
+	{
+		if(isHit)
+		{
+			if(!GameController.Intance.IsBonze())
+			{
+				GameController.Intance.MoveAllRoles();
+			}else 
+			{
+				OldBonzeAnimatorMgr._intance.SetScare();
+				GameController._instance.ChangeRoleSprite();
+			}
+		}else 
+		{
+			OldBonzeAnimatorMgr._intance.SetWalk();
+			if(GameController.Intance.IsBonze())
+			{
+				GameController.Intance.MoveAllRoles();
+			}else
+			{
+				OldBonzeAnimatorMgr._intance.SetScare();
+			}
+		}
+	}
 }

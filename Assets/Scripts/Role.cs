@@ -11,7 +11,14 @@ public class Role {
 		roleType_geisha,
 		roleType_tumbler,
 		roleType_sumo,
-		roleType_fish
+		roleType_fish,
+		roleType_ninja2,
+		roleType_potted2,
+		roleType_geisha2,
+		roleType_tumbler2,
+		roleType_sumo2,
+		roleType_fish2
+
 	}
 
 	public bool _canHit = false;

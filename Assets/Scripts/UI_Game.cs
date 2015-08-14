@@ -20,26 +20,12 @@ public class UI_Game : MonoBehaviour {
 
 	void ButtonHitCallBack(GameObject button)
 	{
-		OldBonzeAnimatorMgr._intance.SetHit();
-		if(!GameController.Intance.IsBonze())
-		{
-			GameController.Intance.MoveAllRoles();
-		}else 
-		{
-			OldBonzeAnimatorMgr._intance.SetScare();
-		}
+		GameController.Intance.OldBonzeDo(true);
 	}
 	
 	void ButtonPassCallBack(GameObject button)
 	{
-		OldBonzeAnimatorMgr._intance.SetWalk();
-		if(GameController.Intance.IsBonze())
-		{
-			GameController.Intance.MoveAllRoles();
-		}else
-		{
-			OldBonzeAnimatorMgr._intance.SetScare();
-		}
+		GameController.Intance.OldBonzeDo(false);
 	}
 
 	void ButtonPauseCallBack(GameObject button)
