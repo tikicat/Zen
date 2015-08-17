@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour {
 
 	public Sprite[] _otherRoleTextureNormal;
 	public Sprite[] _otherRoleTextureHited;
-
+	public Sprite _bonzeWakeUpTexture;
 
 
 	public static GameController _instance;
@@ -93,7 +93,7 @@ public class GameController : MonoBehaviour {
 	{
 			// first will delete
 			GameObject roleWillDelete = _roleObjs[0];
-			iTween.MoveBy(roleWillDelete, iTween.Hash("x", -3.8f,  "time", 0.5f));
+		iTween.MoveAdd(roleWillDelete, iTween.Hash("x", -3.8f,  "time", 0.5f));
 			// remove from roles
 			_roleObjs.RemoveAt(0);
 			_roles.RemoveAt(0);
@@ -102,7 +102,7 @@ public class GameController : MonoBehaviour {
 			ds.StartDeleteMe();
 			foreach(var roleObj in _roleObjs)
 			{
-				iTween.MoveBy(roleObj, iTween.Hash("x", -1.8f,  "time", 0.1f));
+			iTween.MoveAdd(roleObj, iTween.Hash("x", -1.8f,  "time", 0.1f));
 			}
 			if(_roleObjs.Count <= 5)
 			{
@@ -116,29 +116,41 @@ public class GameController : MonoBehaviour {
 		renderer.sprite = GameController.Intance._otherRoleTextureHited[(int)(_roles[0].RoleType)];
 	}
 
+	public void ChangeBonzeSpriteWakeUp()
+	{
+		SpriteRenderer renderer = _roleObjs[0].GetComponent<SpriteRenderer>();
+		renderer.sprite = _bonzeWakeUpTexture;
+	}
 
 	public void OldBonzeDo(bool isHit)
 	{
 		if(isHit)
 		{
-			if(!GameController.Intance.IsBonze())
+			if(GameController.Intance.IsBonze())
 			{
+				ChangeBonzeSpriteWakeUp();
 				GameController.Intance.MoveAllRoles();
+				OldBonzeAnimatorMgr._intance.SetHit();
+				GameData.Intance.AddCurrentScore();
 			}else 
 			{
-				OldBonzeAnimatorMgr._intance.SetScare();
+				OldBonzeAnimatorMgr._intance._hitWrong = true;
+				OldBonzeAnimatorMgr._intance.SetHit();
 				GameController._instance.ChangeRoleSprite();
 			}
 		}else 
 		{
-			OldBonzeAnimatorMgr._intance.SetWalk();
-			if(GameController.Intance.IsBonze())
+			if(!GameController.Intance.IsBonze())
 			{
+				OldBonzeAnimatorMgr._intance.SetWalk();
 				GameController.Intance.MoveAllRoles();
+				GameData.Intance.AddCurrentScore();	
 			}else
 			{
+				OldBonzeAnimatorMgr._intance._hitWrong = true;
 				OldBonzeAnimatorMgr._intance.SetScare();
-			}
+				GameController._instance.ChangeRoleSprite();
+			}	
 		}
 	}
 }

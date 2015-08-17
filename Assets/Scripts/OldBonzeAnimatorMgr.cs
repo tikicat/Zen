@@ -9,6 +9,8 @@ public class OldBonzeAnimatorMgr : MonoBehaviour {
 
 	public delegate void AnimationHandle();
 	public AnimationHandle _animaionState;
+	[HideInInspector]
+	public bool _hitWrong = false;
 
 	void Awake()
 	{
@@ -47,9 +49,15 @@ public class OldBonzeAnimatorMgr : MonoBehaviour {
 		}
 		if(_animator.GetCurrentAnimatorStateInfo(0).IsName("walk"))
 		{
-			if(_animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.7f)
+			if(_hitWrong)
 			{
-				_animaionState = Idle;
+				Scare();
+			}else 
+			{
+				if(_animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.7f)
+				{
+					_animaionState = Idle;
+				}
 			}
 		}
 	}
@@ -62,9 +70,15 @@ public class OldBonzeAnimatorMgr : MonoBehaviour {
 		}
 		if(_animator.GetCurrentAnimatorStateInfo(0).IsName("hit"))
 		{
-			if(_animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.7f)
+			if(_hitWrong)
 			{
-				_animaionState = Idle;
+				Scare();
+			}else 
+			{
+				if(_animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.7f)
+				{
+					_animaionState = Idle;
+				}
 			}
 		}
 	}
@@ -90,12 +104,7 @@ public class OldBonzeAnimatorMgr : MonoBehaviour {
 
 	public void SetScare()
 	{
-		StartCoroutine("CoroutineScare");
-	}
-
-	IEnumerator CoroutineScare()
-	{
-		yield return new WaitForSeconds(1f);
 		_animaionState = Scare;
 	}
+	
 }
