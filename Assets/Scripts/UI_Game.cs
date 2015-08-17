@@ -5,6 +5,11 @@ public class UI_Game : MonoBehaviour {
 	public GameObject _btnHit;
 	public GameObject _btnPass;
 	public GameObject _btnPause;
+	public UIProgressBar _processBarTime;
+
+	bool _gameStart = false;
+	int[] _timeDownNum = {10,5,4,3,2,1};
+	int _timeDownIndex = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +21,24 @@ public class UI_Game : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	void FixUpdate()
+	{
+		if(_gameStart)
+		{
+			_processBarTime.value -= Time.deltaTime / (float)_timeDownNum[_timeDownIndex];
+		}
+	}
+	
+	void StartTimeDown()
+	{
+
+	}
+
+	void CheckTimeWithScore()
+	{	
+
 	}
 
 	void ButtonHitCallBack(GameObject button)
