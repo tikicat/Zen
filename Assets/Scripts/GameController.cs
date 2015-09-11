@@ -20,6 +20,9 @@ public class GameController : MonoBehaviour {
 	private string[] _strsRandom;
 	private List<int> _intRandom;
 	public  List<GameObject> _roleObjs;
+
+	public bool _gameIng = false;
+	public bool _gameOver = false;
 	
 	public static GameController Intance
 	{
@@ -50,6 +53,8 @@ public class GameController : MonoBehaviour {
 	public void Init()
 	{
 		ReadFile("game_random.txt");
+		_gameOver = false;
+		_gameIng = false;
 	}
 
 	public void ReadFile(string FileName)

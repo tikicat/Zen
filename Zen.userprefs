@@ -1,11 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../Downloads/Zen-master/Assets/Scripts/OldBonzeAnimatorMgr.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameController.cs">
     <Files>
-      <File FileName="../../../../../Downloads/Zen-master/Assets/Scripts/GameController.cs" Line="94" Column="24" />
-      <File FileName="../../../../../Downloads/Zen-master/Assets/Scripts/UI_Game.cs" Line="23" Column="32" />
-      <File FileName="../../../../../Downloads/Zen-master/Assets/Scripts/OldBonzeAnimatorMgr.cs" Line="8" Column="21" />
-      <File FileName="../../../../../Downloads/Zen-master/Assets/Scripts/GameData.cs" Line="21" Column="37" />
+      <File FileName="Assets/Scripts/GameController.cs" Line="29" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

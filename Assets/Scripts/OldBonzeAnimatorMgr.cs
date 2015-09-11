@@ -85,6 +85,8 @@ public class OldBonzeAnimatorMgr : MonoBehaviour {
 
 	public void Scare()
 	{
+		GameController.Intance._gameIng = false;
+		GameController.Intance._gameOver = true;
 		if(!_animator.GetBool("hitWrong"))
 		{
 			_animator.SetBool("hitWrong",true);
